@@ -31,7 +31,7 @@ Custom functions are executed just like any core Python function. Simply type th
 
 To make functions more flexible, they can be written to accept arguments. To do this, simply include a new variable name inside the parentheses when defining the function. Note that this variable name _only has meaning within the function's code_. More formally, we say that the scope of the variable is limited to the function.
 
-"""
+```
 def myFuncWithArg(userProvidedWord):
     """This example function shows how to accept and use arguments."""
     
@@ -39,4 +39,4 @@ def myFuncWithArg(userProvidedWord):
 
 myFuncWithArg("test")
 myFuncWithArg("tigers")
-"""
+```
