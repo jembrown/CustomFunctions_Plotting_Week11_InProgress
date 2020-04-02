@@ -2,6 +2,8 @@
 
 ## Additional Resources
 
+- [Python Documentation on Defining Functions](https://docs.python.org/3/tutorial/controlflow.html#defining-functions)
+
 ## Assignment
 
 ## Python Custom Functions
