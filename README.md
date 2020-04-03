@@ -40,3 +40,11 @@ def myFuncWithArg(userProvidedWord):
 myFuncWithArg("test")
 myFuncWithArg("tigers")
 ```
+
+## Return Statements
+
+
+## Optional Arguments
+
+
+
