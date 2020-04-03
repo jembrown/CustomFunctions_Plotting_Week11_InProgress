@@ -71,8 +71,10 @@ myVar = complexMathThing(4,5,2)
 
 By adding a `return` statement, we can save a value produced by the function `complexMathThing()` in a variable (in this case, `myVar`)for future use.
 
-`print(myVar)`
-`myVar * 3`
+```
+print(myVar)
+myVar * 3
+```
 
 ### Optional Arguments
 
