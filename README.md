@@ -78,5 +78,35 @@ myVar * 3
 
 ### Optional Arguments
 
+One way that we can make code more efficient, especially for functions that are used often and have lots of arguments, is to provide default values for some of the arguments. When we do this, a user only *has to* provide values for those arguments that don't have defaults - but they can also change the defaults for the others if they want to.
 
+We can specify default values for arguments when we define the function. Below, we're redefining the `complexMathThing()` function from above, but providing default values for arguments `numTwo` and `numThree`.
 
+```
+def complexMathThing(numOne,numTwo=5,numThree=2):
+    """A complicated mathematical operation with three numbers."""
+
+    return pow(numOne, numTwo) - numThree
+```
+
+Now we can execute `complexMathThing()` by only providing a value for `numOne`, as long as we're ok with the default values for `numTwo` and `numThree`.
+
+`complexMathThing(4)`
+
+However, we can also run the function by providing new values for `numTwo` and/or `numThree`.
+
+```
+# Providing values for all three arguments
+complexMathThing(4,6,1)
+
+# Providing values for numOne and numTwo, so numThree uses its default of 2.
+complexMathThing(4,6)
+```
+
+If we pass the function values for arguments in the same order as they're listed in the function definition, we don't have to write their names. But let's say that we wanted to provide values for `numOne` and `numThree`, but not `numTwo`. Then we'd have to provide the argument names, so the function "knows" to skip `numTwo`.
+
+`complexMathThing(numOne=4,numThree=4)`
+
+Note that we *always* have to provide a value for `numOne`, because it doesn't have a default. For example, what happens when you try this function call
+
+`complexMathThing(numTwo=5,numThree=1)`
