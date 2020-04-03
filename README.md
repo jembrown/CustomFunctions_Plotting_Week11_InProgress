@@ -8,6 +8,8 @@
 
 ## Python Custom Functions
 
+Code corresponding to these notes about custom functions in Python can be found in the `CustomFunctions.ipynb` Jupyter notebook in this repository.
+
 The core Python library and optional modules contain a huge number of useful functions. However, as you write more specialized code, you will inevitably need/want to use a function that doesn't yet exist. Thankfully, Python and other programming languages make it easy to write your own custom functions. Any time you find yourself writing the same block of code repeatedly, you should instead put this code in a new function that can be called whenever needed. Writing your own functions makes your code shorter, more readable, more reliable, and easier to debug. The general syntax for defining a custom function looks like this
 
 ```
