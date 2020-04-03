@@ -41,10 +41,40 @@ myFuncWithArg("test")
 myFuncWithArg("tigers")
 ```
 
-## Return Statements
+Note in the example above how we used the new variable name in the function's code, while the value of this variable changed depending on what string the user provided each time they executed the function.
 
+Functions can take more than one argument, as long as they are specified in the function definition.
 
-## Optional Arguments
+```
+def complexMathThing(numOne,numTwo,numThree):
+    """A complicated mathematical operation with three numbers."""
+
+    print( pow(numOne, numTwo) - numThree )
+    
+complexMathThing(4,5,2)
+```
+
+### Return Statements
+
+In the example above, the function accomplished a task (printing something to the screen), but nothing produced by this function could be saved in a variable to be used later. If we want a function to produce a value (integer, float, string, ...) that can be saved in a variable, we need to include a `return` statement. This statement defines what value a function will produce.
+
+Here, we redefine the function above to `return` the same value that it printed before.
+
+```
+def complexMathThing(numOne,numTwo,numThree):
+    """A complicated mathematical operation with three numbers."""
+
+    return pow(numOne, numTwo) - numThree
+
+myVar = complexMathThing(4,5,2)
+```
+
+By adding a `return` statement, we can save a value produced by the function `complexMathThing()` in a variable (in this case, `myVar`)for future use.
+
+`print(myVar)`
+`myVar * 3`
+
+### Optional Arguments
 
 
 
