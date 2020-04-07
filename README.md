@@ -301,6 +301,38 @@ plt.plot(x,y,'ro')
 
 ![plot6](https://raw.githubusercontent.com/jembrown/CustomFunctions_Plotting_Week11_InProgress/master/images/plot6.png)
 
+In many cases, we have multiple groups that we want to depict in a single scatter plot. In this case, we can use two `.plot()` calls back-to-back and `matplotlib` will color the two groups separately.
 
+```
+x_1 = np.random.normal(5,1,300)
+y_1 = np.random.normal(5,1,300)
+
+x_2 = np.random.normal(7,1,300)
+y_2 = np.random.normal(7,1,300)
+
+plt.plot(x_1,y_1,'o')
+plt.plot(x_2,y_2,'o')
+plt.xlabel("Trait 1")
+plt.ylabel("Trait 2")
+```
+
+![plot7](https://raw.githubusercontent.com/jembrown/CustomFunctions_Plotting_Week11_InProgress/master/images/plot7.png)
+
+Because the two groups overlap some and the points are relatively large, it can be difficult to see some points. In this case, we may want to reduce the sizes of the points using the `markersize` argument. We can also make the symbols different between the groups to make them more distinctive.
+
+```
+x_1 = np.random.normal(5,1,300)
+y_1 = np.random.normal(5,1,300)
+
+x_2 = np.random.normal(7,1,300)
+y_2 = np.random.normal(7,1,300)
+
+plt.plot(x_1,y_1,'^',markersize=3)
+plt.plot(x_2,y_2,'o',markersize=3)
+plt.xlabel("Trait 1")
+plt.ylabel("Trait 2")
+```
+
+![plot8](https://raw.githubusercontent.com/jembrown/CustomFunctions_Plotting_Week11_InProgress/master/images/plot8.png)
 
 
