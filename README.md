@@ -243,7 +243,7 @@ To create a simple line plot, we can use the `.plot()` function of `pyplot`
 
 `plt.plot(x,y)`
 
-![https://raw.githubusercontent.com/jembrown/CustomFunctions_Plotting_Week11_InProgress/master/images/plot1.png]
+![plot1](https://raw.githubusercontent.com/jembrown/CustomFunctions_Plotting_Week11_InProgress/master/images/plot1.png)
 
 Now, let's say we want to label our axes (which, as good scientists we should always do!). We can call the `.xlabel()` and `.ylabel()` functions from `pyplot` before we call `.plot()`.
 
