@@ -247,6 +247,59 @@ To create a simple line plot, we can use the `.plot()` function of `pyplot`
 
 Now, let's say we want to label our axes (which, as good scientists we should always do!). We can call the `.xlabel()` and `.ylabel()` functions from `pyplot` before we call `.plot()`.
 
+```
+plt.ylabel("Distance")
+plt.xlabel("Day")
+plt.plot(x,y)
+```
+
+![plot2](https://raw.githubusercontent.com/jembrown/CustomFunctions_Plotting_Week11_InProgress/master/images/plot2.png)
+
+Ok, this is looking better, but now we'd like to know how the observed trend compares to a line with slope 1 and intercept 0. We can add a second line to our plot with the x values on both axes.
+
+```
+plt.ylabel("Distance")
+plt.xlabel("Day")
+plt.plot(x,y)
+plt.plot(x,x)
+```
+
+![plot3](https://raw.githubusercontent.com/jembrown/CustomFunctions_Plotting_Week11_InProgress/master/images/plot3.png)
+
+Note how `matplotlib` automagically changes the color of our 2nd line to be different than the first.
+
+I actually really like these defaults, but let's say that we have a good reason that we want to make some changes. First, we want our 1:1 line underneath and we want it to be a blue, dashed line. For our data, we want to try red dots. `pyplot` let's us pass a third argument to `.plot()` that will adjust the color and style of plotting. The first letter (`b` or `r` here) will set the color and the next symbols (`o` or `--` here) change the plotting style.
+
+```
+plt.ylabel("Distance")
+plt.xlabel("Day")
+plt.plot(x,x,'b--')
+plt.plot(x,y,'ro')
+```
+
+![plot4](https://raw.githubusercontent.com/jembrown/CustomFunctions_Plotting_Week11_InProgress/master/images/plot4.png)
+
+Here's a variant that uses a dotted 1:1 line.
+
+```
+plt.ylabel("Distance")
+plt.xlabel("Day")
+plt.plot(x,x,'b:')
+plt.plot(x,y,'ro')
+```
+
+![plot5](https://raw.githubusercontent.com/jembrown/CustomFunctions_Plotting_Week11_InProgress/master/images/plot5.png)
+
+Ok, I actually prefer the solid 1:1 line, so let's go back to that, but let's make the line thicker.
+
+```
+plt.ylabel("Distance")
+plt.xlabel("Day")
+plt.plot(x,x,'b',linewidth=3)
+plt.plot(x,y,'ro')
+```
+
+![plot6](https://raw.githubusercontent.com/jembrown/CustomFunctions_Plotting_Week11_InProgress/master/images/plot6.png)
 
 
 
