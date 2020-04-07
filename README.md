@@ -203,7 +203,7 @@ print(myNum)
 
 ### Jupyter Noteboook
 
-ADD MENTION OF NOTEBOOK HERE
+Code corresponding to these notes about custom functions in Python can be found in the `Plotting.ipynb` Jupyter notebook in this repository.
 
 ### Additional Resources
 
@@ -211,5 +211,43 @@ ADD MENTION OF NOTEBOOK HERE
 - [`matplotlib` Usage Guide](https://matplotlib.org/tutorials/introductory/usage.html)
 
 ## Introduction
+
+`Matplotlib` is a Python module that's commonly used for plotting. There are different ways to interact with `matplotlib`, but we'll be relying on the `pyplot` submodule. To import this module, it's helpful to give it a shorter "nickname"
+
+`import matplotlib.pyplot as plt`
+
+When a module (or submodule) is imported with the `as` keyword, it gives us a different (hopefully shorter) name with which to reference it.
+
+Another module that's commonly used when analyzing and plotting data is `numpy`
+
+`import numpy as np`
+
+## Our First Plot
+
+To generate some coordinates for plotting, we'll start by using a `numpy` function that creates a series of numbers on a regular interval
+
+`x = np.linspace(1,10,0.25)`
+
+Now, we'll create `y` values by first setting them equal to the `x` values (using a deep copy)
+
+`y = copy.copy(x)`
+
+and then adding some random noise
+
+```
+for i in range(len(y)):
+    y[i] = y[i] + np.random.normal(0,0.5,1)
+```
+
+To create a simple line plot, we can use the `.plot()` function of `pyplot`
+
+`plt.plot(x,y)`
+
+![https://raw.githubusercontent.com/jembrown/CustomFunctions_Plotting_Week11_InProgress/master/images/plot1.png]
+
+Now, let's say we want to label our axes (which, as good scientists we should always do!). We can call the `.xlabel()` and `.ylabel()` functions from `pyplot` before we call `.plot()`.
+
+
+
 
 
