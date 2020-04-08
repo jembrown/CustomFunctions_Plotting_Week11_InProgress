@@ -1,5 +1,11 @@
 # Custom Functions and Plotting in Python
 
+We will cover two topics this week. Writing custom Python functions and plotting with `matplotlib`.
+
+[Go to Custom Function notes](#python-custom-functions)
+
+[Go to Plotting notes](#plotting-in-python-with-matplotlib)
+
 ## Assignment
 
 ## Python Custom Functions
