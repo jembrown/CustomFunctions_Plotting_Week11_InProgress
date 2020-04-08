@@ -8,6 +8,8 @@ We will cover two topics this week. Writing custom Python functions and plotting
 
 ## Assignment
 
+The assignment for this week can be found in the `Week11Assignment.ipynb` Jupyter notebook, which is in the `Week11Assignments` folder. This assignment will be __due by 5 PM next Thursday (April 16th)__.
+
 ## Python Custom Functions
 
 ### Jupyter Notebook
