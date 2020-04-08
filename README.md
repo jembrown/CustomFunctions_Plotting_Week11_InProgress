@@ -412,7 +412,7 @@ The `.plot()` function can still be used to plot values from categorical variabl
 
 ## Histograms
 
-Histograms are very useful for visualizing the frequencies of different numeric values in a large group. Let's start with a very simple example using random values drawn from a Normal distribution.
+Histograms are useful for visualizing the frequencies of different numeric values in a group. Let's start with a simple example using random values drawn from a Normal distribution.
 
 ```
 exampleNums = np.random.normal(0,2,500) # Example data
