@@ -213,8 +213,10 @@ Code corresponding to these notes about custom functions in Python can be found 
 
 ### Additional Resources
 
+- [Rougier's `matplotlib` Tutorial](https://github.com/rougier/matplotlib-tutorial)
 - [`matplotlib` Homepage](https://matplotlib.org/index.html)
 - [`matplotlib` Usage Guide](https://matplotlib.org/tutorials/introductory/usage.html)
+- [`matplotlib` Gallery](https://matplotlib.org/gallery.html)
 
 ## Introduction
 
@@ -408,7 +410,58 @@ The `.plot()` function can still be used to plot values from categorical variabl
 
 ![plot12](https://raw.githubusercontent.com/jembrown/CustomFunctions_Plotting_Week11_InProgress/master/images/plot12.png)
 
+## Histograms
 
+Histograms are very useful for visualizing the frequencies of different numeric values in a large group. Let's start with a very simple example using random values drawn from a Normal distribution.
 
+```
+exampleNums = np.random.normal(0,2,500) # Example data
 
+plt.hist(exampleNums,50)
+plt.show()
+```
+
+![plot13](https://raw.githubusercontent.com/jembrown/CustomFunctions_Plotting_Week11_InProgress/master/images/plot13.png)
+
+We can also customize the appearance of histograms. Here, we've added gridlines, changed the color, changed the transparency (also known as alpha), and oriented the plot horizontally. We've also written the different arguments to the `.hist()` function on different lines, so that we can comment each of them individually.
+
+```
+plt.hist(exampleNums,               # Example data (the only required argument)
+         50,                        # Number of bins
+         color="orange",            # Color of the bars
+         alpha=0.5,                 # Transparency of the bars (1=solid,0=totally transparent)
+         orientation="horizontal")  # Orienting horizontally
+plt.grid(True)
+plt.show()
+```
+
+![plot14](https://raw.githubusercontent.com/jembrown/CustomFunctions_Plotting_Week11_InProgress/master/images/plot14.png)
+
+Here is an example with real data showing confirmed cases of COVID-19 across all US states and territories for 4/7/2020.
+
+`stateCounts = [2197,211,2575,997,17540,5429,7781,928,1211,14739,9156,274,408,1210,13549,5507,1048,905,1289,16284,519,4371,15202,18852,1069,1915,3037,319,490,2101,747,44416,794,140081,3220,237,8,4782,1472,1181,14582,573,1229,2417,320,4010,8974,1752,575,45,3333,8682,412,2578,221]`
+
+```
+plt.hist(stateCounts,30)
+plt.show()
+```
+
+![plot15](https://raw.githubusercontent.com/jembrown/CustomFunctions_Plotting_Week11_InProgress/master/images/plot15.png)
+
+You can clearly see how skewed the distribution of case counts is across the US, with nearly 140,000 cases in New York and more than 40,000 in New Jersey. Because the counts are so skewed, it may be helpful to change from using a linear scale of counts to a log scale. To do this, we need to do two things. We need to tell `pyplot` to change the x-axis to a log scale, which we do with `plt.scale("log")`. We also need to generate bins that are equally spaced on a log scale. Thankfully, `numpy` has a built-in function that can help us - `.logspace()` - which we use to pass the boundaries of our bins to `.hist()`.
+
+```
+plt.hist(stateCounts,
+         bins=np.logspace(0,6,20))  # Using numpy to generate 20 values evenly spaced on a log
+                                    # scale from 10^0 to 10^6. These values will define the 
+                                    # boundaries of our histogram bins.
+        
+plt.xscale("log")              # Creating a log x-scale for our histogram
+
+plt.grid(True,alpha=0.4)       # Adding grid and adjusting transparency
+
+plt.show()                     # Displaying the histogram
+```
+
+![plot16](https://raw.githubusercontent.com/jembrown/CustomFunctions_Plotting_Week11_InProgress/master/images/plot16.png)
 
