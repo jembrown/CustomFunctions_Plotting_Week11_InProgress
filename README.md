@@ -335,4 +335,74 @@ plt.ylabel("Trait 2")
 
 ![plot8](https://raw.githubusercontent.com/jembrown/CustomFunctions_Plotting_Week11_InProgress/master/images/plot8.png)
 
+## Multiple Plots
+
+It is often convenient to show two or more plots together. Thankfully `pyplot` gives us an easy way to group plots.
+
+```
+# The plt.figure() function creates the overall plotting region
+# The optional figsize argument allows us to adjust the plotting region's size
+
+plt.figure(figsize=(10,4))
+
+# The plt.subplot() function specifies where the first plot should go
+# The first number indicates the number of rows
+# The second number indicates the number of columns
+# The third number indicates the position of the plot
+
+plt.subplot(121)
+plt.plot(x_1,y_1,'bo')
+
+# We use the same dimensions (1 row, 2 columns) for the second plot, but 
+# use position 2
+
+plt.subplot(122)
+plt.plot(x_2,y_2,'ro')
+
+# After we've added the plots, we show the overall figure
+
+plt.show()
+```
+
+![plot9](https://raw.githubusercontent.com/jembrown/CustomFunctions_Plotting_Week11_InProgress/master/images/plot9.png)
+
+By default, `pyplot` will match the minimum and maximum extent of each axis to the data being plotted. But in some cases, we'd like to have control over the axes to make plots equivalent.
+
+```
+plt.figure(figsize=(10,4))
+
+plt.subplot(121)
+plt.axis([0,11,0,11])  # Adding axis limits [xMin,xMax,yMin,yMax]
+plt.plot(x_1,y_1,'bo')
+
+plt.subplot(122)
+plt.axis([0,11,0,11])
+plt.plot(x_2,y_2,'ro')
+
+plt.show()
+```
+
+![plot10](https://raw.githubusercontent.com/jembrown/CustomFunctions_Plotting_Week11_InProgress/master/images/plot10.png)
+
+## Categorical Variables
+
+We don't always have two numerical coordinates for each data point. Sometimes, we have data that are naturally categorized in different groups and we're measuring one numeric value per group.
+
+```
+groups = ["groupOne","groupTwo","groupThree","groupFour"]     # Define names of groups
+values = np.random.normal(10,2,4) # Drawing four numbers to act as values for groups
+plt.bar(groups,values)
+```
+
+![plot11](https://raw.githubusercontent.com/jembrown/CustomFunctions_Plotting_Week11_InProgress/master/images/plot11.png)
+
+The `.plot()` function can still be used to plot values from categorical variables as a line plot. In this context, line plots make less sense, unless the groups have a natural ordering.
+
+`plt.plot(groups,values,"purple",linewidth=3) # Using full word to specify color`
+
+![plot12](https://raw.githubusercontent.com/jembrown/CustomFunctions_Plotting_Week11_InProgress/master/images/plot12.png)
+
+
+
+
 
